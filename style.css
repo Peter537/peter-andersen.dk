@@ -1,0 +1,54 @@
+/* Center content and style heading */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  background: #fafafa;
+  color: #111;
+}
+main {
+  text-align: center;
+}
+h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.2rem;
+}
+#rotator {
+  display: inline-block;
+  cursor: pointer;
+}
+pre#ascii {
+  margin: 0;
+  font-family: monospace;
+  font-size: 1.1rem;
+  line-height: 1;
+  transform-origin: center center;
+  user-select: none;
+}
+.rotating {
+  animation: spin 8s linear infinite;
+}
+.rotating.paused {
+  animation-play-state: paused;
+}
+.hint {
+  margin-top: 0.8rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
