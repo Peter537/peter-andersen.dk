@@ -1,24 +1,275 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Hello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Peter Andersen &mdash; Software Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Peter Andersen, a software developer focused on backend systems, integrations, and practical AI."
+    />
+    <link rel="canonical" href="https://peter-andersen.dk/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://peter-andersen.dk/" />
+    <meta property="og:site_name" content="Peter Andersen" />
+    <meta
+      property="og:title"
+      content="Peter Andersen &mdash; Software Developer"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio of Peter Andersen, a software developer focused on backend systems, integrations, and practical AI."
+    />
+
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <main>
-      <h1>Hello</h1>
-      <div id="rotator" class="rotating" title="Click to pause/resume">
-        <pre id="ascii">
-  /\_/\
- ( o.o )
-  > ^ <
-      </pre
+    <a class="skip-link" href="#main-content" data-i18n="skipLink">
+      Skip to content
+    </a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="wordmark" href="#top">Peter Andersen</a>
+
+        <nav
+          class="primary-nav"
+          aria-label="Primary navigation"
+          data-i18n-aria-label="navigation.label"
         >
+          <a href="#about" data-i18n="navigation.about">About</a>
+          <a href="#skills" data-i18n="navigation.skills">Skills</a>
+          <a href="#projects" data-i18n="navigation.projects">Projects</a>
+        </nav>
+
+        <div
+          class="language-switcher"
+          role="group"
+          aria-label="Language selection"
+          data-language-switcher
+          data-i18n-aria-label="language.label"
+        >
+          <button
+            class="language-button"
+            type="button"
+            data-language="en"
+            aria-label="View site in English"
+            aria-pressed="true"
+            data-i18n-aria-label="language.englishButton"
+            lang="en"
+          >
+            EN
+          </button>
+          <button
+            class="language-button"
+            type="button"
+            data-language="da"
+            aria-label="View site in Danish"
+            aria-pressed="false"
+            data-i18n-aria-label="language.danishButton"
+            lang="da"
+          >
+            DA
+          </button>
+        </div>
       </div>
-      <p class="hint">Click the ASCII art to pause/resume rotation.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="shell hero-content">
+          <h1 id="hero-title">Peter Andersen</h1>
+          <p class="hero-role" data-i18n="hero.role">
+            Software developer focused on backend systems, integrations, and
+            practical AI.
+          </p>
+          <p class="hero-summary" data-i18n="hero.summary">
+            I build readable, testable software and turn complex technical
+            problems into working prototypes.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="#projects"
+              data-i18n="hero.projectsCta"
+            >
+              View projects
+            </a>
+            <a
+              class="button button-secondary"
+              href="https://github.com/Peter537"
+              data-i18n="hero.githubCta"
+            >
+              GitHub profile
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="shell section-layout">
+          <header class="section-heading">
+            <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+            <h2 id="about-title" data-i18n="about.title">About me</h2>
+          </header>
+          <div class="prose about-copy">
+            <p data-i18n="about.firstParagraph">
+              I recently graduated with a Professional Bachelor's degree in
+              Software Development and have hands-on experience from two
+              software development internships.
+            </p>
+            <p data-i18n="about.secondParagraph">
+              I enjoy research-heavy problems where unfamiliar territory must be
+              turned into clear technical experiments. My work is grounded in
+              readable, testable code, thoughtful system integration, clear
+              documentation, and constructive collaboration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section-tinted"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="shell">
+          <header class="section-heading section-heading-wide">
+            <p class="eyebrow" data-i18n="skills.eyebrow">Capabilities</p>
+            <h2 id="skills-title" data-i18n="skills.title">
+              Tools I work with
+            </h2>
+            <p data-i18n="skills.intro">
+              A practical toolkit for building, integrating, and documenting
+              reliable software.
+            </p>
+          </header>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <h3 data-i18n="skills.backend">Backend</h3>
+              <ul class="tag-list">
+                <li>C#</li>
+                <li>.NET</li>
+                <li>Python</li>
+                <li>Java</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3 data-i18n="skills.web">Web &amp; APIs</h3>
+              <ul class="tag-list">
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>REST APIs</li>
+                <li>Streamlit</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3 data-i18n="skills.data">Data &amp; platform</h3>
+              <ul class="tag-list">
+                <li>SQL</li>
+                <li>PostgreSQL</li>
+                <li>Docker</li>
+                <li>Azure / Microsoft Foundry</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3 data-i18n="skills.ai">AI &amp; delivery</h3>
+              <ul class="tag-list">
+                <li data-i18n="skills.llm">LLM integrations</li>
+                <li data-i18n="skills.mcp">Tool calling / MCP</li>
+                <li>Git / GitHub</li>
+                <li data-i18n="skills.testing">
+                  Testing &amp; technical documentation
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="shell">
+          <header class="section-heading section-heading-wide">
+            <p class="eyebrow" data-i18n="projects.eyebrow">Selected work</p>
+            <h2 id="projects-title" data-i18n="projects.title">Projects</h2>
+            <p data-i18n="projects.intro">
+              Practical projects built to solve real problems.
+            </p>
+          </header>
+
+          <div class="projects-grid">
+            <!-- Duplicate this article and add matching translation keys for future projects. -->
+            <article class="project-card">
+              <div class="project-card-main">
+                <p class="project-label" data-i18n="project.featured">
+                  Featured project
+                </p>
+                <h3>Holdet Fantasy Hub</h3>
+                <p class="project-description" data-i18n="project.description">
+                  An unofficial local Windows tool for public Holdet.dk fantasy
+                  data, combining a reusable Python library, a CLI, and a
+                  Streamlit dashboard.
+                </p>
+
+                <a
+                  class="project-link"
+                  href="https://github.com/Peter537/holdet-fantasy-hub"
+                >
+                  <span data-i18n="project.link">View on GitHub</span>
+                  <span aria-hidden="true">&#8599;</span>
+                </a>
+              </div>
+
+              <div class="project-details">
+                <div>
+                  <h4 data-i18n="project.highlights">Highlights</h4>
+                  <ul class="feature-list">
+                    <li data-i18n="project.highlightOne">
+                      Explore player and team statistics across supported
+                      fantasy games.
+                    </li>
+                    <li data-i18n="project.highlightTwo">
+                      Create group standings and reproducible knockout
+                      tournaments.
+                    </li>
+                    <li data-i18n="project.highlightThree">
+                      Export data as TXT, JSON, or Markdown.
+                    </li>
+                    <li data-i18n="project.highlightFour">
+                      Reuse local snapshots while keeping personal data on the
+                      user's computer.
+                    </li>
+                  </ul>
+                </div>
+
+                <ul
+                  class="tag-list project-tags"
+                  aria-label="Project technologies"
+                  data-i18n-aria-label="project.technologiesLabel"
+                >
+                  <li>Python</li>
+                  <li>Streamlit</li>
+                  <li>CLI</li>
+                  <li>Windows</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="script.js"></script>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>&copy; <span id="current-year">2026</span> Peter Andersen</p>
+        <a href="https://github.com/Peter537">GitHub</a>
+      </div>
+    </footer>
   </body>
 </html>
