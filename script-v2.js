@@ -74,6 +74,18 @@ document.documentElement.classList.add("js");
           "Reuse local snapshots while keeping personal data on the user's computer.",
         technologiesLabel: "Project technologies",
       },
+      activityExplorer: {
+        description:
+          "A local-first Blazor app for exploring cycling, running, and walking history from Garmin and Strava exports and individual activity files.",
+        highlightOne:
+          "Import Garmin and Strava account exports plus FIT, GPX, TCX, GZ, and ZIP files without API keys or credentials.",
+        highlightTwo:
+          "Explore searchable activities, synchronized sensor charts, records, routes, segments, and a combined world map.",
+        highlightThree:
+          "Deduplicate equivalent activities while preserving immutable originals and source provenance.",
+        highlightFour:
+          "Keep SQLite data and maps local by default, with online basemaps available only through explicit opt-in.",
+      },
     },
     da: {
       metadata: {
@@ -141,6 +153,18 @@ document.documentElement.classList.add("js");
         highlightFour:
           "Genbrug lokale snapshots, mens personlige data forbliver p\u00e5 brugerens computer.",
         technologiesLabel: "Projektteknologier",
+      },
+      activityExplorer: {
+        description:
+          "Activity Explorer er en lokal Blazor-app til at udforske cykel-, l\u00f8be- og g\u00e5historik fra Garmin- og Strava-eksporter samt individuelle aktivitetsfiler.",
+        highlightOne:
+          "Import\u00e9r Garmin- og Strava-kontoeksporter samt FIT-, GPX-, TCX-, GZ- og ZIP-filer uden API-n\u00f8gler eller adgangsoplysninger.",
+        highlightTwo:
+          "Udforsk s\u00f8gbare aktiviteter, synkroniserede sensorgrafer, rekorder, ruter, segmenter og et samlet verdenskort.",
+        highlightThree:
+          "Identific\u00e9r tilsvarende aktiviteter som dubletter, mens uforanderlige originalfiler og kildehistorik bevares.",
+        highlightFour:
+          "Hold SQLite-data og kort lokale som standard, og aktiv\u00e9r kun online-baggrundskort gennem et udtrykkeligt tilvalg.",
       },
     },
   };
