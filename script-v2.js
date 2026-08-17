@@ -86,6 +86,16 @@ document.documentElement.classList.add("js");
         highlightFour:
           "Keep SQLite data and maps local by default, with online basemaps available only through explicit opt-in.",
       },
+      pcmCdbEditor: {
+        description:
+          "A Windows desktop editor for Pro Cycling Manager CDB save files, combining schema-aware browsing, typed SQLite editing, and copy-first safety workflows.",
+        highlightOne:
+          "Open and edit isolated copies of CDB files with backup and recovery support.",
+        highlightTwo:
+          "Browse bounded table data with search, filters, sorting, and typed inline or full-row editing.",
+        highlightThree:
+          "Use disk-backed undo/redo and preview-first maintenance tools for supported schemas.",
+      },
     },
     da: {
       metadata: {
@@ -165,6 +175,16 @@ document.documentElement.classList.add("js");
           "Identific\u00e9r tilsvarende aktiviteter som dubletter, mens uforanderlige originalfiler og kildehistorik bevares.",
         highlightFour:
           "Hold SQLite-data og kort lokale som standard, og aktiv\u00e9r kun online-baggrundskort gennem et udtrykkeligt tilvalg.",
+      },
+      pcmCdbEditor: {
+        description:
+          "Et Windows-desktopprogram til CDB-savefiler fra Pro Cycling Manager, der kombinerer skemabevidst navigation, typestyret SQLite-redigering og sikre arbejdsgange baseret p\u00e5 kopier.",
+        highlightOne:
+          "\u00c5bn og redig\u00e9r isolerede kopier af CDB-filer med underst\u00f8ttelse af backup og gendannelse.",
+        highlightTwo:
+          "Gennemse afgr\u00e6nsede dele af tabeller med s\u00f8gning, filtre og sortering, og redig\u00e9r data med korrekte datatyper direkte i celler eller hele r\u00e6kker.",
+        highlightThree:
+          "Brug diskbaseret fortryd og gentag samt vedligeholdelsesv\u00e6rkt\u00f8jer med forh\u00e5ndsvisning til underst\u00f8ttede databaseskemaer.",
       },
     },
   };
