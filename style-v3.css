@@ -8,6 +8,11 @@
   --accent: #0b6570;
   --accent-dark: #074a52;
   --accent-soft: #dceced;
+  --activity-level-0: #e8efee;
+  --activity-level-1: #b8d7d9;
+  --activity-level-2: #78adb2;
+  --activity-level-3: #347f88;
+  --activity-level-4: #07535d;
   --border: #d4dfde;
   --focus: #b54d12;
   --shadow: 0 16px 42px rgba(23, 35, 41, 0.08);
@@ -436,6 +441,170 @@ h4 {
   background: var(--surface-tinted);
 }
 
+.github-activity {
+  margin-block-start: clamp(2rem, 6vw, 4rem);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.github-activity-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
+
+.github-activity-header h3 {
+  margin-block-end: 0.75rem;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+}
+
+.github-activity-description {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.github-profile-link {
+  flex: 0 0 auto;
+}
+
+.github-activity-content {
+  min-height: 15rem;
+  margin-block-start: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.github-activity-status {
+  display: flex;
+  min-height: 15rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 2rem;
+  border-radius: var(--radius-medium);
+  background: var(--surface-tinted);
+  color: var(--muted);
+  text-align: center;
+}
+
+.github-activity-status[hidden],
+.github-activity-figure[hidden],
+.github-activity-status a[hidden] {
+  display: none;
+}
+
+.github-activity-status a {
+  color: var(--accent-dark);
+  font-weight: 750;
+}
+
+.github-activity-figure {
+  --github-cell-size: 0.75rem;
+  --github-cell-gap: 0.25rem;
+  margin: 0;
+}
+
+.github-calendar-scroll {
+  max-width: 100%;
+  padding: 0.25rem 0.25rem 0.8rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-gutter: stable;
+}
+
+.github-calendar {
+  width: max-content;
+  min-width: 100%;
+}
+
+.github-calendar-months,
+.github-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--github-week-count),
+    var(--github-cell-size)
+  );
+  column-gap: var(--github-cell-gap);
+}
+
+.github-calendar-months {
+  min-height: 1.65rem;
+  align-items: end;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.github-calendar-month {
+  white-space: nowrap;
+}
+
+.github-calendar-grid {
+  grid-template-rows: repeat(7, var(--github-cell-size));
+  row-gap: var(--github-cell-gap);
+}
+
+.github-day {
+  display: block;
+  width: var(--github-cell-size);
+  height: var(--github-cell-size);
+  border: 1px solid rgba(23, 35, 41, 0.07);
+  border-radius: 0.18rem;
+  background: var(--activity-level-0);
+}
+
+.github-day[data-level="1"] {
+  background: var(--activity-level-1);
+}
+
+.github-day[data-level="2"] {
+  background: var(--activity-level-2);
+}
+
+.github-day[data-level="3"] {
+  background: var(--activity-level-3);
+}
+
+.github-day[data-level="4"] {
+  background: var(--activity-level-4);
+}
+
+.github-calendar-grid .github-day:hover {
+  outline: 0.12rem solid var(--focus);
+  outline-offset: 0.08rem;
+}
+
+.github-activity-caption {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-block-start: 0.75rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.github-activity-summary {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.github-activity-summary strong {
+  color: var(--text);
+}
+
+.github-activity-legend {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.32rem;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--text);
@@ -487,6 +656,12 @@ h4 {
     grid-template-columns: 1fr;
   }
 
+  .github-activity-header,
+  .github-activity-caption {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .section-layout {
     gap: 1.5rem;
   }
@@ -530,6 +705,10 @@ h4 {
   .project-card {
     padding: 1.25rem;
   }
+
+  .github-activity {
+    padding: 1.25rem;
+  }
 }
 
 @media (forced-colors: active) {
@@ -537,7 +716,9 @@ h4 {
   .language-switcher,
   .language-button,
   .skill-card,
-  .project-card {
+  .project-card,
+  .github-activity,
+  .github-day {
     border: 1px solid ButtonText;
   }
 }

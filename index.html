@@ -22,8 +22,8 @@
       content="Portfolio of Peter Andersen, a software developer focused on backend systems, integrations, and practical AI."
     />
 
-    <link rel="stylesheet" href="style-v2.css" />
-    <script src="script-v2.js" defer></script>
+    <link rel="stylesheet" href="style-v3.css" />
+    <script src="script-v3.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content" data-i18n="skipLink">
@@ -378,6 +378,106 @@
               </div>
             </article>
           </div>
+
+          <section
+            class="github-activity"
+            data-github-activity
+            aria-labelledby="github-activity-title"
+            aria-busy="true"
+          >
+            <header class="github-activity-header">
+              <div>
+                <p class="project-label" data-i18n="githubActivity.eyebrow">
+                  Public work
+                </p>
+                <h3 id="github-activity-title" data-i18n="githubActivity.title">
+                  GitHub activity
+                </h3>
+                <p
+                  class="github-activity-description"
+                  data-i18n="githubActivity.description"
+                >
+                  A daily snapshot of the contributions GitHub displays on my
+                  public profile.
+                </p>
+              </div>
+
+              <a
+                class="project-link github-profile-link"
+                href="https://github.com/Peter537"
+                data-i18n-aria-label="githubActivity.profileLabel"
+                aria-label="View @Peter537 on GitHub"
+              >
+                <span>@Peter537</span>
+                <span aria-hidden="true">&#8599;</span>
+              </a>
+            </header>
+
+            <div class="github-activity-content">
+              <p
+                class="github-activity-status"
+                data-github-status
+                aria-live="polite"
+              >
+                <span data-github-status-text data-i18n="githubActivity.loading">
+                  Loading GitHub activity…
+                </span>
+                <a
+                  href="https://github.com/Peter537"
+                  data-github-status-link
+                  data-i18n="githubActivity.unavailableLink"
+                  hidden
+                >
+                  View @Peter537 on GitHub
+                </a>
+              </p>
+
+              <figure class="github-activity-figure" data-github-figure hidden>
+                <div
+                  class="github-calendar-scroll"
+                  data-github-scroll
+                  data-i18n-aria-label="githubActivity.scrollLabel"
+                  aria-label="GitHub contribution calendar; scroll horizontally to see all dates"
+                  tabindex="0"
+                >
+                  <div
+                    class="github-calendar"
+                    data-github-calendar
+                    role="img"
+                    aria-label="GitHub contribution activity"
+                  >
+                    <div
+                      class="github-calendar-months"
+                      data-github-months
+                      aria-hidden="true"
+                    ></div>
+                    <div
+                      class="github-calendar-grid"
+                      data-github-grid
+                      aria-hidden="true"
+                    ></div>
+                  </div>
+                </div>
+
+                <figcaption class="github-activity-caption">
+                  <div class="github-activity-summary">
+                    <strong data-github-total></strong>
+                    <span data-github-updated></span>
+                  </div>
+
+                  <div class="github-activity-legend" aria-hidden="true">
+                    <span data-i18n="githubActivity.less">Less</span>
+                    <span class="github-day" data-level="0"></span>
+                    <span class="github-day" data-level="1"></span>
+                    <span class="github-day" data-level="2"></span>
+                    <span class="github-day" data-level="3"></span>
+                    <span class="github-day" data-level="4"></span>
+                    <span data-i18n="githubActivity.more">More</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
       </section>
     </main>
