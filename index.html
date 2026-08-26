@@ -22,8 +22,8 @@
       content="Portfolio of Peter Andersen, a software developer focused on backend systems, integrations, and practical AI."
     />
 
-    <link rel="stylesheet" href="style-v3.css" />
-    <script src="script-v3.js" defer></script>
+    <link rel="stylesheet" href="style-v4.css" />
+    <script src="script-v4.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content" data-i18n="skipLink">
@@ -378,21 +378,25 @@
               </div>
             </article>
           </div>
+        </div>
+      </section>
 
-          <section
-            class="github-activity"
-            data-github-activity
-            aria-labelledby="github-activity-title"
-            aria-busy="true"
-          >
+      <section
+        class="section section-tinted"
+        data-github-activity
+        aria-labelledby="github-activity-title"
+        aria-busy="true"
+      >
+        <div class="shell">
+          <div class="github-activity">
             <header class="github-activity-header">
               <div>
                 <p class="project-label" data-i18n="githubActivity.eyebrow">
                   Public work
                 </p>
-                <h3 id="github-activity-title" data-i18n="githubActivity.title">
+                <h2 id="github-activity-title" data-i18n="githubActivity.title">
                   GitHub activity
-                </h3>
+                </h2>
                 <p
                   class="github-activity-description"
                   data-i18n="githubActivity.description"
@@ -433,29 +437,36 @@
               </p>
 
               <figure class="github-activity-figure" data-github-figure hidden>
-                <div
-                  class="github-calendar-scroll"
-                  data-github-scroll
-                  data-i18n-aria-label="githubActivity.scrollLabel"
-                  aria-label="GitHub contribution calendar; scroll horizontally to see all dates"
-                  tabindex="0"
-                >
+                <div class="github-calendar-layout">
+                  <div class="github-calendar-weekdays" aria-hidden="true">
+                    <span data-github-weekday="1">Mon</span>
+                    <span data-github-weekday="3">Wed</span>
+                    <span data-github-weekday="5">Fri</span>
+                  </div>
                   <div
-                    class="github-calendar"
-                    data-github-calendar
-                    role="img"
-                    aria-label="GitHub contribution activity"
+                    class="github-calendar-scroll"
+                    data-github-scroll
+                    data-i18n-aria-label="githubActivity.scrollLabel"
+                    aria-label="GitHub contribution calendar; scroll horizontally to see all dates"
+                    tabindex="0"
                   >
                     <div
-                      class="github-calendar-months"
-                      data-github-months
-                      aria-hidden="true"
-                    ></div>
-                    <div
-                      class="github-calendar-grid"
-                      data-github-grid
-                      aria-hidden="true"
-                    ></div>
+                      class="github-calendar"
+                      data-github-calendar
+                      role="img"
+                      aria-label="GitHub contribution activity"
+                    >
+                      <div
+                        class="github-calendar-months"
+                        data-github-months
+                        aria-hidden="true"
+                      ></div>
+                      <div
+                        class="github-calendar-grid"
+                        data-github-grid
+                        aria-hidden="true"
+                      ></div>
+                    </div>
                   </div>
                 </div>
 
@@ -477,7 +488,7 @@
                 </figcaption>
               </figure>
             </div>
-          </section>
+          </div>
         </div>
       </section>
     </main>

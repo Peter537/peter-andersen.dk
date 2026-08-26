@@ -454,9 +454,14 @@ document.documentElement.classList.add("js");
       month: "short",
       timeZone: "UTC",
     });
+    const weekdayFormatter = new Intl.DateTimeFormat(locale, {
+      weekday: "short",
+      timeZone: "UTC",
+    });
     const calendar = root.querySelector("[data-github-calendar]");
     const months = root.querySelector("[data-github-months]");
     const grid = root.querySelector("[data-github-grid]");
+    const weekdays = root.querySelectorAll("[data-github-weekday]");
     const total = root.querySelector("[data-github-total]");
     const updated = root.querySelector("[data-github-updated]");
     const monthFragment = document.createDocumentFragment();
@@ -467,6 +472,12 @@ document.documentElement.classList.add("js");
       "--github-week-count",
       String(githubActivitySnapshot.weeks.length),
     );
+
+    weekdays.forEach(function (weekday) {
+      const weekdayIndex = Number(weekday.dataset.githubWeekday);
+      const referenceDate = new Date(Date.UTC(2024, 0, 7 + weekdayIndex));
+      weekday.textContent = weekdayFormatter.format(referenceDate);
+    });
 
     githubActivitySnapshot.weeks.forEach(function (week, weekIndex) {
       week.days.forEach(function (day) {
@@ -632,6 +643,16 @@ document.documentElement.classList.add("js");
       applyLanguage(button.dataset.language, true);
     });
   });
+
+  const githubActivityScroll = document.querySelector("[data-github-scroll]");
+  if (githubActivityScroll) {
+    githubActivityScroll.addEventListener("keydown", function (event) {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+
+      event.preventDefault();
+      githubActivityScroll.scrollLeft += event.key === "ArrowLeft" ? -48 : 48;
+    });
+  }
 
   const year = document.getElementById("current-year");
   if (year) year.textContent = String(new Date().getFullYear());
