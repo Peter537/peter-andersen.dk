@@ -9,7 +9,7 @@ export default {
     try {
       response = await fetch(deployHookUrl, {
         method: "POST",
-        redirect: "error",
+        redirect: "manual",
         signal: AbortSignal.timeout(30_000),
       });
     } catch {

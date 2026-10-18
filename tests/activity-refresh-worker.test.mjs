@@ -17,7 +17,7 @@ test("the scheduled Worker requests a Pages build", async (t) => {
   const [url, options] = fetchMock.mock.calls[0].arguments;
   assert.equal(url, DEPLOY_HOOK_URL);
   assert.equal(options.method, "POST");
-  assert.equal(options.redirect, "error");
+  assert.equal(options.redirect, "manual");
 });
 
 test("missing configuration fails without making a request", async (t) => {
@@ -27,16 +27,18 @@ test("missing configuration fails without making a request", async (t) => {
   assert.equal(fetchMock.mock.callCount(), 0);
 });
 
-test("a rejected deploy hook marks the scheduled run as failed", async (t) => {
-  t.mock.method(globalThis, "fetch", async () =>
-    new Response("Failure details", { status: 503 }),
-  );
+for (const status of [302, 503]) {
+  test(`a deploy hook returning HTTP ${status} marks the run as failed`, async (t) => {
+    t.mock.method(globalThis, "fetch", async () =>
+      new Response("Failure details", { status }),
+    );
 
-  await assert.rejects(
-    worker.scheduled({}, { PAGES_DEPLOY_HOOK_URL: DEPLOY_HOOK_URL }),
-    /Cloudflare Pages deploy hook returned HTTP 503/,
-  );
-});
+    await assert.rejects(
+      worker.scheduled({}, { PAGES_DEPLOY_HOOK_URL: DEPLOY_HOOK_URL }),
+      new RegExp("Cloudflare Pages deploy hook returned HTTP " + status),
+    );
+  });
+}
 
 test("network failures do not expose the secret deploy hook URL", async (t) => {
   t.mock.method(globalThis, "fetch", async () => {
