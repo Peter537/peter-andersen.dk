@@ -414,8 +414,10 @@ export async function updateGithubActivity({
     username,
     generatedAt: now.toISOString(),
   });
+  // GitHub can trim the leading day at a week boundary; validation still
+  // requires at least 365 consecutive days and the current end date below.
   if (
-    snapshot.period.from !== window.from.slice(0, 10) ||
+    snapshot.period.from < window.from.slice(0, 10) ||
     snapshot.period.to !== window.to.slice(0, 10)
   ) {
     fail("GitHub returned a contribution period outside the requested window");

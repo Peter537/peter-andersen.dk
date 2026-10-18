@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
 
+import { buildSite } from "../scripts/build-site.mjs";
 import {
   buildSnapshot,
   getContributionWindow,
@@ -281,6 +282,113 @@ test("preserves the prior snapshot when an update fails validation", async () =>
     );
 
     assert.equal(await readFile(outputPath, "utf8"), priorContents);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test("accepts GitHub's 365-day calendar at a Sunday week boundary", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "github-activity-test-"));
+
+  try {
+    const snapshot = await updateGithubActivity({
+      token: "test-token",
+      outputPath: join(directory, "github-activity.json"),
+      now: new Date("2026-10-18T12:00:00Z"),
+      fetchImpl: async () => ({
+        ok: true,
+        json: async () =>
+          createGraphqlResponse({ from: "2025-10-19", to: "2026-10-18" }),
+      }),
+    });
+
+    assert.deepEqual(snapshot.period, { from: "2025-10-19", to: "2026-10-18" });
+    assert.equal(snapshot.weeks.flatMap((week) => week.days).length, 365);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test("rejects calendars outside the requested window or ending before today", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "github-activity-test-"));
+
+  try {
+    for (const period of [
+      { from: "2025-10-17", to: "2026-10-18" },
+      { from: "2025-10-18", to: "2026-10-17" },
+    ]) {
+      await assert.rejects(
+        updateGithubActivity({
+          token: "test-token",
+          outputPath: join(directory, "github-activity.json"),
+          now: new Date("2026-10-18T12:00:00Z"),
+          fetchImpl: async () => ({
+            ok: true,
+            json: async () => createGraphqlResponse(period),
+          }),
+        }),
+        /outside the requested window/,
+      );
+    }
+    assert.deepEqual(await readdir(directory), []);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test("builds the public site with fresh activity without changing the source snapshot", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "site-build-test-"));
+  const sourceSnapshotUrl = new URL("../github-activity.json", import.meta.url);
+  const sourceSnapshot = await readFile(sourceSnapshotUrl, "utf8");
+
+  try {
+    const snapshot = await buildSite({
+      outputDirectory: directory,
+      token: "test-token",
+      now: new Date("2025-01-01T12:00:00Z"),
+      fetchImpl: async () => ({
+        ok: true,
+        json: async () =>
+          createGraphqlResponse({ from: "2024-01-02", to: "2025-01-01" }),
+      }),
+    });
+
+    assert.deepEqual((await readdir(directory)).sort(), [
+      "github-activity.json",
+      "index.html",
+      "script-v4.js",
+      "style-v4.css",
+    ]);
+    assert.equal(snapshot.generatedAt, "2025-01-01T12:00:00.000Z");
+    assert.deepEqual(
+      JSON.parse(await readFile(join(directory, "github-activity.json"), "utf8")),
+      snapshot,
+    );
+    for (const file of ["index.html", "script-v4.js", "style-v4.css"]) {
+      assert.deepEqual(
+        await readFile(join(directory, file)),
+        await readFile(new URL("../" + file, import.meta.url)),
+      );
+    }
+    assert.equal(await readFile(sourceSnapshotUrl, "utf8"), sourceSnapshot);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test("fails the site build instead of publishing the checked-in snapshot when GitHub fails", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "site-build-test-"));
+
+  try {
+    await assert.rejects(
+      buildSite({
+        outputDirectory: directory,
+        token: "test-token",
+        fetchImpl: async () => ({ ok: false, status: 503 }),
+      }),
+      /GitHub GraphQL request failed with status 503/,
+    );
+    assert.deepEqual(await readdir(directory), []);
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
