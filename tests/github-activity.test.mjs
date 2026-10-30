@@ -356,15 +356,15 @@ test("builds the public site with fresh activity without changing the source sna
     assert.deepEqual((await readdir(directory)).sort(), [
       "github-activity.json",
       "index.html",
-      "script-v4.js",
-      "style-v4.css",
+      "script-v5.js",
+      "style-v5.css",
     ]);
     assert.equal(snapshot.generatedAt, "2025-01-01T12:00:00.000Z");
     assert.deepEqual(
       JSON.parse(await readFile(join(directory, "github-activity.json"), "utf8")),
       snapshot,
     );
-    for (const file of ["index.html", "script-v4.js", "style-v4.css"]) {
+    for (const file of ["index.html", "script-v5.js", "style-v5.css"]) {
       assert.deepEqual(
         await readFile(join(directory, file)),
         await readFile(new URL("../" + file, import.meta.url)),

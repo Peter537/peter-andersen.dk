@@ -5,7 +5,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { updateGithubActivity } from "./update-github-activity.mjs";
 
 const PROJECT_ROOT = fileURLToPath(new URL("../", import.meta.url));
-const STATIC_FILES = ["index.html", "style-v4.css", "script-v4.js"];
+const STATIC_FILES = ["index.html", "style-v5.css", "script-v5.js"];
 
 export async function buildSite({
   outputDirectory = resolve(PROJECT_ROOT, "dist"),

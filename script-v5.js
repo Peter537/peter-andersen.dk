@@ -22,14 +22,12 @@ document.documentElement.classList.add("js");
       },
       language: {
         label: "Language selection",
-        englishButton: "View site in English",
-        danishButton: "View site in Danish",
       },
       hero: {
         role:
           "Software developer focused on backend systems, integrations, and practical AI.",
         summary:
-          "I build readable, testable software and turn complex technical problems into working prototypes.",
+          "I build .NET and Python tools for exploring data and connecting systems.",
         projectsCta: "View projects",
         githubCta: "GitHub profile",
       },
@@ -37,9 +35,9 @@ document.documentElement.classList.add("js");
         eyebrow: "About",
         title: "About me",
         firstParagraph:
-          "I recently graduated with a Professional Bachelor's degree in Software Development and have hands-on experience from two software development internships.",
+          "I hold a Professional Bachelor's degree in Software Development and have completed two software development internships.",
         secondParagraph:
-          "I enjoy research-heavy problems where unfamiliar territory must be turned into clear technical experiments. My work is grounded in readable, testable code, thoughtful system integration, clear documentation, and constructive collaboration.",
+          "During my internships, I built conversational workflows with local and hosted language models, developed CLI and MCP tools, and integrated Python-based anomaly detection with a C# web application.",
       },
       skills: {
         eyebrow: "Capabilities",
@@ -62,7 +60,7 @@ document.documentElement.classList.add("js");
       project: {
         featured: "Featured project",
         description:
-          "An unofficial local Windows tool for public Holdet.dk fantasy data, combining a reusable Python library, a CLI, and a Streamlit dashboard.",
+          "Explore public Holdet.dk fantasy data, compare players and teams, and create standings and tournaments in a local Windows dashboard.",
         link: "View on GitHub",
         highlights: "Highlights",
         highlightOne:
@@ -76,7 +74,7 @@ document.documentElement.classList.add("js");
       },
       activityExplorer: {
         description:
-          "A local-first Blazor app for exploring cycling, running, and walking history from Garmin and Strava exports and individual activity files.",
+          "Explore your cycling, running, and walking history from Garmin and Strava exports in one local app, with searchable activities, sensor charts, routes, and maps.",
         highlightOne:
           "Import Garmin and Strava account exports plus FIT, GPX, TCX, GZ, and ZIP files without API keys or credentials.",
         highlightTwo:
@@ -88,11 +86,11 @@ document.documentElement.classList.add("js");
       },
       pcmCdbEditor: {
         description:
-          "A Windows desktop editor for Pro Cycling Manager CDB save files, combining schema-aware browsing, typed SQLite editing, and copy-first safety workflows.",
+          "Edit Pro Cycling Manager save files on Windows, using isolated working copies, backups, and undo/redo.",
         highlightOne:
           "Open and edit isolated copies of CDB files with backup and recovery support.",
         highlightTwo:
-          "Browse bounded table data with search, filters, sorting, and typed inline or full-row editing.",
+          "Search, filter, and sort table data, then edit individual cells or entire rows.",
         highlightThree:
           "Use disk-backed undo/redo and preview-first maintenance tools for supported schemas.",
       },
@@ -133,14 +131,12 @@ document.documentElement.classList.add("js");
       },
       language: {
         label: "Sprogvalg",
-        englishButton: "Vis siden p\u00e5 engelsk",
-        danishButton: "Vis siden p\u00e5 dansk",
       },
       hero: {
         role:
           "Softwareudvikler med fokus p\u00e5 backend-systemer, integrationer og praktisk AI.",
         summary:
-          "Jeg bygger l\u00e6sbar og testbar software og oms\u00e6tter komplekse tekniske problemer til fungerende prototyper.",
+          "Jeg bygger v\u00e6rkt\u00f8jer i .NET og Python til at udforske data og forbinde systemer.",
         projectsCta: "Se projekter",
         githubCta: "GitHub-profil",
       },
@@ -148,9 +144,9 @@ document.documentElement.classList.add("js");
         eyebrow: "Om",
         title: "Om mig",
         firstParagraph:
-          "Jeg er nyuddannet professionsbachelor i softwareudvikling og har praktisk erfaring fra to praktikforl\u00f8b som softwareudvikler.",
+          "Jeg er professionsbachelor i softwareudvikling og har gennemf\u00f8rt to praktikforl\u00f8b som softwareudvikler.",
         secondParagraph:
-          "Jeg trives med researchtunge problemstillinger, hvor ukendte omr\u00e5der skal oms\u00e6ttes til tydelige tekniske eksperimenter. Mit arbejde bygger p\u00e5 l\u00e6sbar og testbar kode, gennemt\u00e6nkt systemintegration, klar dokumentation og konstruktivt samarbejde.",
+          "I mine praktikforl\u00f8b har jeg udviklet samtaleforl\u00f8b med lokale og hostede sprogmodeller, bygget CLI- og MCP-v\u00e6rkt\u00f8jer og integreret anomalidetektion i Python med en C#-webapplikation.",
       },
       skills: {
         eyebrow: "Kompetencer",
@@ -173,7 +169,7 @@ document.documentElement.classList.add("js");
       project: {
         featured: "Udvalgt projekt",
         description:
-          "Et uofficielt, lokalt Windows-v\u00e6rkt\u00f8j til offentlige fantasydata fra Holdet.dk, der kombinerer et genanvendeligt Python-bibliotek, en CLI og et Streamlit-dashboard.",
+          "Udforsk offentlige fantasydata fra Holdet.dk, sammenlign spillere og hold, og opret stillinger og turneringer i et lokalt Windows-dashboard.",
         link: "Se p\u00e5 GitHub",
         highlights: "H\u00f8jdepunkter",
         highlightOne:
@@ -187,7 +183,7 @@ document.documentElement.classList.add("js");
       },
       activityExplorer: {
         description:
-          "Activity Explorer er en lokal Blazor-app til at udforske cykel-, l\u00f8be- og g\u00e5historik fra Garmin- og Strava-eksporter samt individuelle aktivitetsfiler.",
+          "Udforsk din cykel-, l\u00f8be- og g\u00e5historik fra Garmin- og Strava-eksporter i \u00e9n lokal app med s\u00f8gbare aktiviteter, sensorgrafer, ruter og kort.",
         highlightOne:
           "Import\u00e9r Garmin- og Strava-kontoeksporter samt FIT-, GPX-, TCX-, GZ- og ZIP-filer uden API-n\u00f8gler eller adgangsoplysninger.",
         highlightTwo:
@@ -199,11 +195,11 @@ document.documentElement.classList.add("js");
       },
       pcmCdbEditor: {
         description:
-          "Et Windows-desktopprogram til CDB-savefiler fra Pro Cycling Manager, der kombinerer skemabevidst navigation, typestyret SQLite-redigering og sikre arbejdsgange baseret p\u00e5 kopier.",
+          "Redig\u00e9r gemte spil fra Pro Cycling Manager p\u00e5 Windows med separate arbejdskopier, backup og mulighed for at fortryde og gentage \u00e6ndringer.",
         highlightOne:
           "\u00c5bn og redig\u00e9r isolerede kopier af CDB-filer med underst\u00f8ttelse af backup og gendannelse.",
         highlightTwo:
-          "Gennemse afgr\u00e6nsede dele af tabeller med s\u00f8gning, filtre og sortering, og redig\u00e9r data med korrekte datatyper direkte i celler eller hele r\u00e6kker.",
+          "S\u00f8g, filtr\u00e9r og sort\u00e9r tabeldata, og redig\u00e9r enkelte celler eller hele r\u00e6kker.",
         highlightThree:
           "Brug diskbaseret fortryd og gentag samt vedligeholdelsesv\u00e6rkt\u00f8jer med forh\u00e5ndsvisning til underst\u00f8ttede databaseskemaer.",
       },

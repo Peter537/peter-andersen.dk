@@ -168,7 +168,7 @@ a {
 
 .hero-content {
   max-width: 58rem;
-  padding-block: clamp(5rem, 12vw, 8.5rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .eyebrow {
@@ -224,7 +224,7 @@ h4 {
 }
 
 .hero-role {
-  max-width: 24ch;
+  max-width: 34ch;
   margin-block-end: 1rem;
   font-size: clamp(1.45rem, 3.3vw, 2.15rem);
   font-weight: 650;
@@ -279,7 +279,7 @@ h4 {
 }
 
 .section {
-  padding-block: clamp(4.5rem, 9vw, 7rem);
+  padding-block: clamp(3rem, 6vw, 4.5rem);
   scroll-margin-top: 1rem;
 }
 
@@ -731,7 +731,7 @@ h4 {
   }
 
   .hero-content {
-    padding-block: 4.5rem;
+    padding-block: 3rem;
   }
 
   .hero-actions .button {
